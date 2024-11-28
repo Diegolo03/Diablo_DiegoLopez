@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
+
 
 public class Cofre : MonoBehaviour
 {
@@ -17,13 +17,14 @@ public class Cofre : MonoBehaviour
     }
     private void OnMouseEnter()
     {
-        Cursor.SetCursor(cursorInteraccion, Vector2.zero,CursorMode Auto);
+        
+        Cursor.SetCursor(cursorInteraccion, Vector2.zero,CursorMode.Auto);
         outline.enabled = true;
         
     }
     private void OnMouseExit()
     {
-        Cursor.SetCursor(cursorPorDefecto, Vector2.zero, CursorMode Auto);
+        Cursor.SetCursor(cursorPorDefecto, Vector2.zero, CursorMode.Auto);
         outline.enabled = false;
     }
 }
