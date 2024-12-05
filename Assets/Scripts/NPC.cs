@@ -13,7 +13,7 @@ public class NPC : MonoBehaviour
     public void Interactuar(Transform interactuador)
     {
         Debug.Log("Hola");
-        transform.DOLookAt(interactuador.position, tiemporotacion, AxisConstraint.Y).OnComplete(() => SistemaDialogo.sistema.IniciarDialogo());
+        transform.DOLookAt(interactuador.position, tiemporotacion, AxisConstraint.Y).OnComplete(() => SistemaDialogo.sistema.IniciarDialogo(dialogo));
         
     }
 

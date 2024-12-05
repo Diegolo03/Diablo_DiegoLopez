@@ -37,7 +37,7 @@ public class SistemaDialogo : MonoBehaviour
     {
 
     }
-    public void IniciarDialogo()
+    public void IniciarDialogo(DialogaSO dialogo)
     {
         marcos.SetActive(true);
     }
