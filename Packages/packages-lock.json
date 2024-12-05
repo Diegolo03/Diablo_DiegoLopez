@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.alexismorin.lightprobepopulator": {
-      "version": "file:C:/Users/Alumno/Downloads",
+      "version": "file:../Assets/LightProbePopulator",
       "depth": 0,
       "source": "local",
       "dependencies": {}

@@ -8,12 +8,17 @@ public class NPC : MonoBehaviour
     private Outline outline;
     [SerializeField] private Texture2D cursorInteraccion;
     [SerializeField] private Texture2D cursorPorDefecto;
+    [SerializeField] private DialogaSO dialogo;
     [SerializeField] private float tiemporotacion;
     public void Interactuar(Transform interactuador)
     {
         Debug.Log("Hola");
-        transform.DOLookAt(interactuador.position,tiemporotacion,AxisConstraint.Y);
+        transform.DOLookAt(interactuador.position, tiemporotacion, AxisConstraint.Y).OnComplete(() => SistemaDialogo.sistema.IniciarDialogo());
+        
     }
+
+    
+
     // Start is called before the first frame update
     private void Awake()
     {
