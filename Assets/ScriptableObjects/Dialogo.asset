@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Dialogo
   m_EditorClassIdentifier: 
   frases:
-  - 
-  delay: 1
+  - Hola aventureroooooooooooooooooooooooooooooooooooooo
+  - Hola aventurero miam miau miau miau
+  delay: 0.1
