@@ -10,10 +10,11 @@ public class NPC : MonoBehaviour
     [SerializeField] private Texture2D cursorPorDefecto;
     [SerializeField] private DialogaSO dialogo;
     [SerializeField] private float tiemporotacion;
+    [SerializeField] private Transform cameraPoint;
     public void Interactuar(Transform interactuador)
     {
         Debug.Log("Hola");
-        transform.DOLookAt(interactuador.position, tiemporotacion, AxisConstraint.Y).OnComplete(() => SistemaDialogo.sistema.IniciarDialogo(dialogo));
+        transform.DOLookAt(interactuador.position, tiemporotacion, AxisConstraint.Y).OnComplete(() => SistemaDialogo.sistema.IniciarDialogo(dialogo, cameraPoint));
         
     }
 

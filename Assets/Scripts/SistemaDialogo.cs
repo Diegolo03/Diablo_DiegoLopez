@@ -11,6 +11,7 @@ public class SistemaDialogo : MonoBehaviour
     private bool escribiendo;
     private DialogaSO dialogoActual;
     private int indiceFraseActual;
+    [SerializeField] private Transform npcCamera;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -26,8 +27,9 @@ public class SistemaDialogo : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    public void IniciarDialogo(DialogaSO dialogo)
+    public void IniciarDialogo(DialogaSO dialogo,Transform camaraPoint)
     {
+        npcCamera.SetPositionAndRotation(camaraPoint.position,camaraPoint.transform.rotation);
         Time.timeScale = 0f;
 
         dialogoActual = dialogo;
