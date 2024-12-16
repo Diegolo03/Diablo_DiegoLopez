@@ -49,4 +49,12 @@ public class SistemaPatrulla : MonoBehaviour
     {
         
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+
+            //Component.SetActive(SistemaCombate());
+        }
+    }
 }
