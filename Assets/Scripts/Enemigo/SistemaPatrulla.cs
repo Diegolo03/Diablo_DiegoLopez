@@ -5,23 +5,32 @@ using UnityEngine.AI;
 
 public class SistemaPatrulla : MonoBehaviour
 {
+    [SerializeField] private Enemigo main;
     [SerializeField] private Transform ruta;
     [SerializeField] private NavMeshAgent agent;
     private Vector3 destinoActual;
     List<Vector3> listadoPuntos = new List<Vector3>();
     private int indiceRutaActual=-1;
+    [SerializeField] private float velocidadPatrulla, distanciaPatrulla;
+
     // Start is called before the first frame update
     private void Awake()
     {
-        
+        main.Patrulla = this;
         foreach (Transform punto in ruta)
         {
             listadoPuntos.Add(punto.position);
         }
        
     }
+    private void OnEnable()
+    {
+        agent.speed = velocidadPatrulla;
+        agent.stoppingDistance = distanciaPatrulla;
+    }
     void Start()
     {
+       
         StartCoroutine(PatrullarYEsperar());
     }
 
@@ -53,8 +62,9 @@ public class SistemaPatrulla : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
-            //Component.SetActive(SistemaCombate());
+            StopAllCoroutines();
+            main.ActivarCombate(other.transform);
+            this.enabled=false;
         }
     }
 }

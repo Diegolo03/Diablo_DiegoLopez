@@ -2451,7 +2451,7 @@ Transform:
   m_GameObject: {fileID: 175369747}
   serializedVersion: 2
   m_LocalRotation: {x: 0.23915787, y: 0.36963937, z: -0.099062435, w: 0.89238834}
-  m_LocalPosition: {x: -90.7618, y: 25.5, z: -24.894102}
+  m_LocalPosition: {x: -90.78, y: 25.5, z: -32.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4460,7 +4460,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.23915789, y: 0.36963937, z: -0.09906244, w: 0.89238834}
-  m_LocalPosition: {x: -90.7618, y: 25.5, z: -24.894102}
+  m_LocalPosition: {x: -90.78, y: 25.5, z: -32.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4742,13 +4742,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334997597}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 969656a0f632e0e4689374916e1d9c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 620673036}
   ruta: {fileID: 778095709}
   agent: {fileID: 620673033}
+  velocidadPatrulla: 2
+  distanciaPatrulla: 0
 --- !u!135 &334997600
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9545,6 +9548,7 @@ GameObject:
   - component: {fileID: 755479996}
   - component: {fileID: 755479995}
   - component: {fileID: 755479997}
+  - component: {fileID: 755479998}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -9561,7 +9565,7 @@ Transform:
   m_GameObject: {fileID: 755479990}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -60.761803, y: 1, z: 5.1058974}
+  m_LocalPosition: {x: -60.78, y: 1, z: -2.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9631,6 +9635,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!136 &755479998
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755479990}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &767714725 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5882328823015194218, guid: b4db16834714d1647b748d2ecb5b68ae,
@@ -17016,11 +17043,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324527371}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73b27154bcc372b49a220a453984a667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 620673036}
+  velocidadCombate: 5
+  distanciaAtaque: 1.5
+  agent: {fileID: 620673033}
 --- !u!1001 &1345434188
 PrefabInstance:
   m_ObjectHideFlags: 0
