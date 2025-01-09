@@ -21,17 +21,19 @@ public class SistemaPatrulla : MonoBehaviour
         {
             listadoPuntos.Add(punto.position);
         }
-       
+        
     }
     private void OnEnable()
     {
+        indiceRutaActual = -1;
         agent.speed = velocidadPatrulla;
         agent.stoppingDistance = distanciaPatrulla;
+        StartCoroutine(PatrullarYEsperar());
     }
     void Start()
     {
        
-        StartCoroutine(PatrullarYEsperar());
+       
     }
 
     // Update is called once per frame
