@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC : MonoBehaviour
+public class NPC : MonoBehaviour,IInteractuable
 {
     private Outline outline;
     [SerializeField] private Texture2D cursorInteraccion;

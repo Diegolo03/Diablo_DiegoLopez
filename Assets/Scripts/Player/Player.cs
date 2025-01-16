@@ -11,9 +11,9 @@ public class Player : MonoBehaviour
     private NavMeshAgent agent;
     private Camera cam;
     private Transform ultimoClick;
-    [SerializeField]private float distanciaInteraccion;
+    [SerializeField]private float distanciaInteraccion,vidas;
     private float tiemporotacion=1;
-    private bool iniciar;
+    //private bool iniciar;
 
     // Start is called before the first frame update
     void Start()
@@ -33,15 +33,16 @@ public class Player : MonoBehaviour
         }
        
         
-        if (ultimoClick&&ultimoClick.TryGetComponent(out NPC npc))
+        if (ultimoClick&&ultimoClick.TryGetComponent(out IInteractuable interactuable))
         {
             
             agent.stoppingDistance = distanciaInteraccion;
             if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance) 
             {
 
-                transform.DOLookAt(npc.transform.position,tiemporotacion, AxisConstraint.Y).OnComplete(() => LanzarInteraccion(npc));
-                iniciar = false;
+                //transform.DOLookAt(interactuable.transform.position,tiemporotacion, AxisConstraint.Y).OnComplete(() => */LanzarInteraccion(interactuable));
+                LanzarInteraccion(interactuable);
+                //iniciar = false;
 
 
 
@@ -54,15 +55,15 @@ public class Player : MonoBehaviour
         }
 
     }
-    private void LanzarInteraccion(NPC npc)
+    private void LanzarInteraccion(IInteractuable interactuable)
     {
-        if (!iniciar)
-        {
-            iniciar=true;
-            npc.Interactuar(this.transform);
+        //if (!iniciar)
+        //{
+            //iniciar=true;
+            interactuable.Interactuar(transform);
             ultimoClick = null;
 
-        }
+        //}
     }
     
     private void InteractuarYMover()
@@ -80,5 +81,9 @@ public class Player : MonoBehaviour
             }
 
         }
+    }
+    public void HacerDanho(float danhoRecibido)
+    {
+        vidas -= danhoRecibido;
     }
 }

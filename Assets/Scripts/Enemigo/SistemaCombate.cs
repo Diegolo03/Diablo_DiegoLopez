@@ -9,8 +9,9 @@ public class SistemaCombate : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     [SerializeField] private Enemigo main;
-    [SerializeField] private float velocidadCombate, distanciaAtaque;
+    [SerializeField] private float velocidadCombate, distanciaAtaque,danhoAtaque;
     [SerializeField] private NavMeshAgent agent;
+    [SerializeField] private Collider col;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -26,18 +27,15 @@ public class SistemaCombate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (main.MainTarget && agent.CalculatePath(main.MainTarget.position, new NavMeshPath())) 
+        if (main.MainTarget!=null && agent.CalculatePath(main.MainTarget.position, new NavMeshPath())) 
         {
             agent.SetDestination(main.MainTarget.position);
-            if (agent.remainingDistance==0)
+            if (!agent.pathPending && agent.remainingDistance <= distanciaAtaque)
             {
                 anim.SetBool("Atacar", true);
 
             }
-            else
-            {
-                anim.SetBool("Atacar", false);
-            }
+            
         }
         else
         {
@@ -52,7 +50,15 @@ public class SistemaCombate : MonoBehaviour
         Quaternion rotacionATarget = Quaternion.LookRotation(direccionATarget);
         transform.rotation = rotacionATarget;
     }
-
-
+    #region Ejectados por eventos de animacion
+    private void Atacar()
+    {
+        main.MainTarget.GetComponent<Player>().HacerDanho(danhoAtaque);
+    }
+    private void FinDeAtaque()
+    {
+        anim.SetBool("Atacar", false);
+    }
+    #endregion
 
 }

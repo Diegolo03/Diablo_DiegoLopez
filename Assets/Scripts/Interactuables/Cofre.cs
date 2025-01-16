@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 
 
-public class Cofre : MonoBehaviour
+public class Cofre : MonoBehaviour, IInteractuable
 {
 
     private Outline outline;
@@ -26,5 +26,9 @@ public class Cofre : MonoBehaviour
     {
         Cursor.SetCursor(cursorPorDefecto, Vector2.zero, CursorMode.Auto);
         outline.enabled = false;
+    }
+    public void Interactuar(Transform interactuador)
+    {
+        
     }
 }
