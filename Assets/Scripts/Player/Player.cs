@@ -11,9 +11,13 @@ public class Player : MonoBehaviour
     private NavMeshAgent agent;
     private Camera cam;
     private Transform ultimoClick;
-    [SerializeField]private float distanciaInteraccion,vidas;
+    [SerializeField]private float distanciaInteraccion=2f,vidas, distanciaAtaque=2f;
     private float tiemporotacion=1;
+    [SerializeField] private Animator anim;
     //private bool iniciar;
+    private PlayerAnimations playerAnimations;
+   
+    public PlayerAnimations PlayerAnimations { get => playerAnimations; set => playerAnimations = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -49,10 +53,20 @@ public class Player : MonoBehaviour
 
             }
         }
-        else if (ultimoClick)
+        else if (ultimoClick && ultimoClick.TryGetComponent(out Enemigo enemigo))
         {
-            agent.stoppingDistance = 0;
+
+            agent.stoppingDistance = distanciaAtaque;
+            if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+            {
+                PlayerAnimations.EjecutarAtaque();
+            }
         }
+        else if (ultimoClick)
+            {
+                agent.stoppingDistance = 0;
+            }
+        
 
     }
     private void LanzarInteraccion(IInteractuable interactuable)

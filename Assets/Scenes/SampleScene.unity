@@ -9732,6 +9732,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanciaInteraccion: 2
   vidas: 100
+  distanciaAtaque: 0
+  anim: {fileID: 0}
 --- !u!54 &755479997
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -36384,8 +36386,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3475158387913552572}
-  - component: {fileID: 4653782229419295789}
+  - component: {fileID: 5295013093017485525}
   - component: {fileID: 5295013093017485524}
+  - component: {fileID: 4653782229419295789}
   m_Layer: 3
   m_Name: PlayerVisual
   m_TagString: Untagged
@@ -39462,6 +39465,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 755479995}
+--- !u!114 &5295013093017485525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3174305184280892892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27a89436c30290e4da2b2138c422d79f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 0}
 --- !u!1 &5312118343324834305
 GameObject:
   m_ObjectHideFlags: 0
