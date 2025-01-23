@@ -6,6 +6,7 @@ using UnityEngine;
 public class SistemaDialogo : MonoBehaviour
 {
     public static SistemaDialogo sistema;
+    [SerializeField]private EventManagerSO eventManager;
     [SerializeField] private GameObject marcos;
     [SerializeField] private TMP_Text textoDialogo;
     private bool escribiendo;
@@ -89,6 +90,10 @@ public class SistemaDialogo : MonoBehaviour
         indiceFraseActual = 0;
         escribiendo = false;
         dialogoActual = null;
+        if (dialogoActual.tieneMision)
+        {
+            eventManager.NuevaMision();
+        }
         Time.timeScale = 1f;
     }
 }

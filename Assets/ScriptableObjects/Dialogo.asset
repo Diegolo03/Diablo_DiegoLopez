@@ -13,6 +13,28 @@ MonoBehaviour:
   m_Name: Dialogo
   m_EditorClassIdentifier: 
   frases:
-  - Hola aventureroooooooooooooooooooooooooooooooooooooo
-  - Hola aventurero miam miau miau miau
+  - "\xA1Ah, viajero! He estado investigando unas setas raras que crecen por el bosque.
+    Se dice que tienen propiedades m\xE1gicas, pero son dif\xEDciles de encontrar.
+    Si logras conseguir algunas, podr\xEDa recompensarte."
+  - "\xA1Bien hecho, has tra\xEDdo las setas! Pero a\xFAn no he terminado... En el
+    claro del bosque, al amanecer, crecen unas setas con poderes curativos. Necesito
+    algunas de esas para completar mis investigaciones. \xBFPodr\xEDas traerme un
+    par?"
+  - "\xA1Impresionante! Las setas curativas son justo lo que necesitaba. Pero ahora
+    me he enterado de unas setas muy raras, cerca de las ruinas antiguas. Dicen que
+    tienen propiedades que amplifican la magia. \xBFPodr\xEDas buscar algunas all\xE1?"
+  - "\xA1Estupendo, has encontrado las setas m\xE1gicas! Pero hay algo a\xFAn m\xE1s
+    raro que necesito. En la zona cercana al r\xEDo, crecen unas setas que solo aparecen
+    bajo la luna llena. Son peligrosas de conseguir, pero son clave para mi siguiente
+    experimento. \xBFTe atreves?"
+  - "\xA1Bien hecho al conseguir las setas del r\xEDo! Ahora, por \xFAltimo, necesito
+    algo realmente complicado. En las colinas al norte crecen unas setas muy peque\xF1as,
+    casi invisibles. Dicen que tienen un gran poder, pero son muy dif\xEDciles de
+    encontrar. \xBFPodr\xE1s conseguirlas?"
+  - "\xA1Lo lograste! Has tra\xEDdo todas las setas que necesitaba. Como te promet\xED,
+    aqu\xED tienes tu recompensa. Gracias a ti, podr\xE9 terminar mi investigaci\xF3n
+    y hacer descubrimientos que cambiar\xE1n todo lo que sabemos sobre la magia."
+  frasesClip: []
   delay: 0.1
+  tieneMision: 1
+  textoMision: Consigue setas de muerte (0/3)

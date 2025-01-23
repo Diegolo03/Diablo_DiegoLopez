@@ -6,6 +6,8 @@ public class DialogaSO : ScriptableObject
 {
     [TextArea]
     public string[] frases;
+    public AudioClip[] frasesClip;
     public float delay;
-    
+    public bool tieneMision;
+    public string textoMision;
 }
