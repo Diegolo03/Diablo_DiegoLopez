@@ -8,6 +8,8 @@ public class DialogaSO : ScriptableObject
     public string[] frases;
     public AudioClip[] frasesClip;
     public float delay;
+
     public bool tieneMision;
-    public string textoMision;
+
+    public MisionSO mision;
 }

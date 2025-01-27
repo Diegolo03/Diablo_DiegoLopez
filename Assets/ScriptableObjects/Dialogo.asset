@@ -37,4 +37,4 @@ MonoBehaviour:
   frasesClip: []
   delay: 0.1
   tieneMision: 1
-  textoMision: Consigue setas de muerte (0/3)
+  mision: {fileID: 11400000, guid: 2c472ec2b9cdee64fab15e9e1d8bef11, type: 2}

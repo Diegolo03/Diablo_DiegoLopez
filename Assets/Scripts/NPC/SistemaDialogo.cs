@@ -92,7 +92,7 @@ public class SistemaDialogo : MonoBehaviour
         dialogoActual = null;
         if (dialogoActual.tieneMision)
         {
-            eventManager.NuevaMision();
+            eventManager.NuevaMision(dialogoActual.mision);
         }
         Time.timeScale = 1f;
     }
