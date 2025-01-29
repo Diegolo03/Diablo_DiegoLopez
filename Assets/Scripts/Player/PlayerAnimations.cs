@@ -11,7 +11,7 @@ public class PlayerAnimations : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        main.PlayerAnimations = this;
+        //main.PlayerAnimations = this;
     }
 
     // Update is called once per frame

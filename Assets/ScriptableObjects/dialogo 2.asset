@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af9710d5e9a7b384191cf742d6fc1de0, type: 3}
-  m_Name: Mision 0
+  m_Script: {fileID: 11500000, guid: 844433e18643e9b4496479cdb151c3e0, type: 3}
+  m_Name: dialogo 2
   m_EditorClassIdentifier: 
-  ordenInicial: Recoge 3 setas de la muerte
-  ordenFinal: Vuelve con Rigoberta y dale las setas
-  repetir: 1
-  repeticionesTotales: 3
-  indiceMision: 1
+  frases:
+  - "Gracias has conseguido todas las setas que te hab\xEDa pedido, auqi tienes tu
+    recompensa aventurero"
+  frasesClip: []
+  delay: 0.1
+  tieneMision: 0
+  mision: {fileID: 0}

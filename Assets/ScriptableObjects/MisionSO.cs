@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,7 @@ public class MisionSO : ScriptableObject
     public bool repetir;
     public int repeticionesTotales;
 
-    public int estadoActual;
+    [NonSerialized]public int estadoActual=0;
 
     public int indiceMision;
 }
