@@ -14,7 +14,7 @@ public class SistemaDialogo : MonoBehaviour
     private DialogaSO dialogoActual;
     private int indiceFraseActual;
     [SerializeField] private Transform npcCamera;
-    private NPC npc;
+   [SerializeField] private NPC npc;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -73,10 +73,7 @@ public class SistemaDialogo : MonoBehaviour
             else
             {
                 TerminarDialogo();
-                if (dialogoActual == npc.dialogo2)
-                {
-                    SceneManager.LoadScene(1);
-                }
+               
             }
         }
         
@@ -101,6 +98,12 @@ public class SistemaDialogo : MonoBehaviour
         {
             eventManager.NuevaMision(dialogoActual.mision);
         }
+        else if (npc.dialogoActual == npc.dialogo2)
+        {
+            SceneManager.LoadScene(1);
+        }
         dialogoActual = null;
+
+       
     }
 }
