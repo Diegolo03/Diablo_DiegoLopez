@@ -32,6 +32,7 @@ public class SistemaMisiones : MonoBehaviour
     {
         toggleMision[mision.indiceMision].Toggle.isOn = true;
         toggleMision[mision.indiceMision].TextoMision.text = mision.ordenFinal;
+
     }
     
 }

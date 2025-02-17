@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SistemaDialogo : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class SistemaDialogo : MonoBehaviour
     private DialogaSO dialogoActual;
     private int indiceFraseActual;
     [SerializeField] private Transform npcCamera;
+    private NPC npc;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -71,6 +73,10 @@ public class SistemaDialogo : MonoBehaviour
             else
             {
                 TerminarDialogo();
+                if (dialogoActual == npc.dialogo2)
+                {
+                    SceneManager.LoadScene(1);
+                }
             }
         }
         
